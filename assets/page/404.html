@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <style>
+        :root {
+            --background-color: #031119;
+            --default-color: rgba(255, 255, 255, 0.8);
+            --heading-color: #e0e9f2;
+            --accent-color: #e3a127;
+            --surface-color: #1b262c;
+            --contrast-color: #ffffff;
+
+            --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --heading-font: "Nunito Sans", sans-serif;
+            --nav-font: "Raleway", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--default-color);
+            font-family: var(--default-font);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .nf-container {
+            background-color: var(--surface-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .nf-container h1 {
+            color: var(--heading-color);
+            font-size: 6rem;
+            font-family: var(--heading-font);
+            margin-bottom: 10px;
+        }
+
+        .nf-container h2 {
+            color: var(--heading-color);
+            font-size: 2rem;
+            font-family: var(--heading-font);
+            margin-bottom: 20px;
+        }
+
+        .nf-container p {
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .nf-container a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3 ease;
+            color: var(--contrast-color);
+        }
+
+        .nf-container a:hover {
+            background-color: #c4881d;
+        }
+
+        @media (max-width: 480px) {
+            .nf-container h1 {
+                font-size: 4rem;
+            }
+
+            .nf-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nf-container">
+        <h1>404</h1>
+        <h2>Halaman Tidak Ditemukan</h2>
+        <p>Maaf, halaman yang kamu cari tidak tersedia atau sudah dipindahkan.</p>
+        <a href="../../">Back to Home</a>
+    </div>
+</body>
+</html>
