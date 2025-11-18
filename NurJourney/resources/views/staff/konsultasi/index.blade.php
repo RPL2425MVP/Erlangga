@@ -12,10 +12,10 @@
                 <p>Ini adalah halaman Kelola Konsultasi untuk staff.</p>
 
                 {{-- Contoh tombol tambah --}}
-                <a href="{{ route('staff.konsultasi.create') }}"
+                {{--  <a href="{{ route('staff.konsultasi.create') }}"
                    class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
                     Tambah Konsultasi
-                </a>
+                </a> --}}
 
                 {{-- Nanti di sini bisa kamu isi tabel data konsultasi --}}
             </div>

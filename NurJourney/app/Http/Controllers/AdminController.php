@@ -13,6 +13,6 @@ class AdminController extends Controller
     } 
     public function detail()
     {
-        return view('admin.detail');
+        return view('admin.detail.show');
     }
 }

@@ -56,37 +56,23 @@
         </p>
 
         <div class="paket-card-wrapper">
-            <!-- Paket 1 -->
-            <div class="paket-card" data-aos="fade-right">
-                <img src="{{ asset('image/hajiPlus.webp') }}" alt="Haji Plus">
-                <div class="paket-content">
-                    <h3>Haji Plus</h3>
-                    <p>
-                        Haji dengan izin resmi pemerintah Indonesia yang memiliki masa tunggu lebih cepat.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 50.000.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
+            @foreach ($paket as $item)
+<div class="paket-card" data-aos="fade-up">
+    @foreach ($paket as $p)
+    <img src="{{ asset($p->gambar) }}" alt="{{ $p->nama_paket }}">
+@endforeach
+    <div class="paket-content">
+        <h3>{{ $item->nama_paket }}</h3>
+        <p>{{ $item->deskripsi }}</p>
+        <div class="paket-price">
+            <span>Mulai dari</span>
+            <span>Rp {{ number_format($item->harga, 0, ',', '.') }}</span>
+        </div>
+        <a href="{{ route('detail.show', $p->id) }}" class="btn-paket">Lihat Selengkapnya</a>
+    </div>
+</div>
+@endforeach
 
-            <!-- Paket 2 -->
-            <div class="paket-card" data-aos="zoom-in">
-                <img src="{{ asset('image/hajiFuroda.webp') }}" alt="Haji Furoda">
-                <div class="paket-content">
-                    <h3>Haji Furoda</h3>
-                    <p>
-                        Kuota Haji eksklusif resmi dari Arab Saudi haji khusus tanpa waktu tunggu.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 33.900.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>

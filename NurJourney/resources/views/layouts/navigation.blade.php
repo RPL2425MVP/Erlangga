@@ -30,7 +30,7 @@
                         <x-nav-link :href="route('admin.detail.index')" :active="request()->routeIs('admin.paket.*')">
                             {{ __('Kelola Detail Paket') }}
                         </x-nav-link>
-                        
+
                     @endif
 
                     {{-- Menu untuk Staff --}}

@@ -1,4 +1,4 @@
-<title>NurJourney - Haji</title>
+<title>NurJourney - Umroh</title>
 @include('layout.headerA')
 
 <!-- Hero -->
@@ -56,53 +56,23 @@
         </p>
 
         <div class="paket-card-wrapper">
-            <!-- Paket 1 -->
-            <div class="paket-card" data-aos="fade-right">
-                <img src="{{ asset('image/umrohReguler.webp') }}" alt="Umroh Reguler">
-                <div class="paket-content">
-                    <h3>Umroh Reguler</h3>
-                    <p>
-                        Paket umroh dengan harga lebih terjangkau.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 27.900.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
+            @foreach ($paket as $item)
+<div class="paket-card" data-aos="fade-up">
+        @foreach ($paket as $p)
+    <img src="{{ asset($p->gambar) }}" alt="{{ $p->nama_paket }}">
+@endforeach
+    <div class="paket-content">
+        <h3>{{ $item->nama_paket }}</h3>
+        <p>{{ $item->deskripsi }}</p>
+        <div class="paket-price">
+            <span>Mulai dari</span>
+            <span>Rp {{ number_format($item->harga, 0, ',', '.') }}</span>
+        </div>
+        <a href="{{ route('detail.show', $p->id) }}" class="btn-paket">Lihat Selengkapnya</a>
+    </div>
+</div>
+@endforeach
 
-            <!-- Paket 2 -->
-            <div class="paket-card" data-aos="zoom-in">
-                <img src="{{ asset('image/umrohPlus.webp') }}" alt="Umroh Plus">
-                <div class="paket-content">
-                    <h3>Umroh Plus</h3>
-                    <p>
-                        Paket umroh dengan fasilitas hotel bintang 5 & lebih terjangkau.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 47.900.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
-
-            <!-- Paket 3 -->
-            <div class="paket-card" data-aos="fade-left">
-                <img src="{{ asset('image/umrohPrivate.jpeg') }}" alt="Umroh Private">
-                <div class="paket-content">
-                    <h3>Umroh Private</h3>
-                    <p>
-                        Paket umroh dengan perjalanan secara private & fasilitas hotel bintang 5.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 55.400.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>

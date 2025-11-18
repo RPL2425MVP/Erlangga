@@ -1,4 +1,4 @@
-<title>NurJourney - Haji</title>
+<title>NurJourney - Wisata Halal</title>
 @include('layout.headerA')
 
 <!-- Hero -->
@@ -56,53 +56,20 @@
         </p>
 
         <div class="paket-card-wrapper">
-            <!-- Paket 1 -->
-            <div class="paket-card" data-aos="fade-right">
-                <img src="{{ asset('image/tour-korea.jpg') }}" alt="Tour Korea">
-                <div class="paket-content">
-                    <h3>Tour Korea</h3>
-                    <p>
-                        Paket umroh dengan harga lebih terjangkau.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 27.900.000</span>
+            @foreach ($paket as $item)
+                <div class="paket-card" data-aos="fade-up">
+                    <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama_paket }}">
+                    <div class="paket-content">
+                        <h3>{{ $item->nama_paket }}</h3>
+                        <p>{{ $item->deskripsi }}</p>
+                        <div class="paket-price">
+                            <span>Mulai dari</span>
+                            <span>Rp {{ number_format($item->harga, 0, ',', '.') }}</span>
+                        </div>
+                        <a href="{{ route('detail.show', $item->id) }}" class="btn-paket">Lihat Selengkapnya</a>
                     </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
                 </div>
-            </div>
-
-            <!-- Paket 2 -->
-            <div class="paket-card" data-aos="zoom-in">
-                <img src="{{ asset('image/tour-turki.jpg') }}" alt="Tour Turkiye">
-                <div class="paket-content">
-                    <h3>Tour Turkiye</h3>
-                    <p>
-                        Tour ke Turkiye dengan fasilitas lengkap & didampingi oleh tour guide.
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 47.900.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
-
-            <!-- Paket 3 -->
-            <div class="paket-card" data-aos="fade-left">
-                <img src="{{ asset('image/tour-jepang.jpeg') }}" alt="Tour Jepang">
-                <div class="paket-content">
-                    <h3>Tour Jepang</h3>
-                    <p>
-                        Tour ke Jepang dengan fasilitas lengkap & didampingi oleh tour guide
-                    </p>
-                    <div class="paket-price">
-                        <span>Mulai dari</span>
-                        <span>Rp 55.400.000</span>
-                    </div>
-                    <a href="#" class="btn-paket">Lihat Selengkapnya</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

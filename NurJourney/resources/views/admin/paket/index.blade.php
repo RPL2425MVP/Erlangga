@@ -4,7 +4,7 @@
     </x-slot>
 
     <div class="py-6 max-w-7xl mx-auto">
-        <a href="{{ route('admin.paket.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">+ Tambah Paket</a>
+        <a href="{{ route('admin.paket.create') }}" class="bg-blue-600 text-black px-4 py-2 rounded">+ Tambah Paket</a>
 
         <div class="mt-4 bg-white shadow rounded-lg p-6">
             @if (session('success'))
@@ -28,6 +28,7 @@
                             <td class="border p-2">Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
                             <td class="border p-2 text-center">
                                 <a href="{{ route('admin.paket.edit', $item->id) }}" class="text-blue-600">Edit</a> |
+                                <a href="{{ route('detail.show', $item->id) }}">Detail</a> |
                                 <form action="{{ route('admin.paket.destroy', $item->id) }}" method="POST" class="inline">
                                     @csrf @method('DELETE')
                                     <button onclick="return confirm('Yakin hapus?')" class="text-red-600">Hapus</button>
